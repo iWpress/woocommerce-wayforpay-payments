@@ -64,7 +64,6 @@ function woocommerce_wayforpay_init()
             'productPrice'
         );
 
-
         public function __construct()
         {
             $this->id = 'wayforpay';
@@ -103,11 +102,13 @@ function woocommerce_wayforpay_init()
 
         function init_form_fields()
         {
-            $this->form_fields = array('enabled' => array('title' => __('Enable/Disable', 'woocommerce-wayforpay-payments'),
-                'type' => 'checkbox',
-                'label' => __('Enable WayForPay Payment Module.', 'woocommerce-wayforpay-payments'),
-                'default' => 'no',
-                'description' => __('Show in the Payment List as a payment option', 'woocommerce-wayforpay-payments')),
+            $this->form_fields = array(
+                'enabled' => array('title' => __('Enable/Disable', 'woocommerce-wayforpay-payments'),
+                    'type' => 'checkbox',
+                    'label'  => __('Enable WayForPay Payment Module', 'woocommerce-wayforpay-payments'),
+                    'default' => 'no',
+                    'description' => __('Show in the Payment List as a payment option.', 'woocommerce-wayforpay-payments'),
+                    'desc_tip' => true),
                 'title' => array('title' => __('Title:', 'woocommerce-wayforpay-payments'),
                     'type' => 'text',
                     'default' => __('Internet acquiring', 'woocommerce-wayforpay-payments'),
@@ -120,37 +121,34 @@ function woocommerce_wayforpay_init()
                     'desc_tip' => true),
                 'merchant_account' => array('title' => __('Merchant Login', 'woocommerce-wayforpay-payments'),
                     'type' => 'text',
-                    'description' => __('Given to Merchant by wayforpay.com', 'woocommerce-wayforpay-payments'),
+                    'description' => __('Given to Merchant by wayforpay.com.', 'woocommerce-wayforpay-payments'),
                     'default' => 'test_merch_n1',
-                    'desc_tip' => true
-                ),
+                    'desc_tip' => true),
                 'secret_key' => array('title' => __('Merchant Secret key', 'woocommerce-wayforpay-payments'),
                     'type' => 'text',
-                    'description' => __('Given to Merchant by wayforpay.com', 'woocommerce-wayforpay-payments'),
-                    'desc_tip' => true,
+                    'description' => __('Given to Merchant by wayforpay.com.', 'woocommerce-wayforpay-payments'),
                     'default' => 'flk3409refn54t54t*FNJRET',
-                ),
+                    'desc_tip' => true),
                 'showlogo' => array('title' => __('Show Logo', 'woocommerce-wayforpay-payments'),
                     'type' => 'checkbox',
                     'label' => __('Show the wayforpay.com logo in the Payment Method section for the user', 'woocommerce-wayforpay-payments'),
                     'default' => 'yes',
-                    'description' => __('Tick to show wayforpay.com logo', 'woocommerce-wayforpay-payments'),
+                    'description' => __('Tick to show wayforpay.com logo.', 'woocommerce-wayforpay-payments'),
                     'desc_tip' => true),
                 'returnUrl' => array('title' => __('Return URL', 'woocommerce-wayforpay-payments'),
                     'type' => 'select',
                     'options' => $this->wayforpay_get_pages(__('Select Page', 'woocommerce-wayforpay-payments')),
-                    'description' => __('URL of success page', 'woocommerce-wayforpay-payments'),
+                    'description' => __('URL of success page.', 'woocommerce-wayforpay-payments'),
                     'desc_tip' => true),
                 'returnUrl_m' => array('title' => __('or specify', 'woocommerce-wayforpay-payments'),
                     'type' => 'text',
-                    'description' => __('URL of success page', 'woocommerce-wayforpay-payments'),
+                    'description' => __('URL of success page.', 'woocommerce-wayforpay-payments'),
                     'default' => '',
-                    'desc_tip' => true
-                ),
+                    'desc_tip' => true),
                 'serviceUrl' => array('title' => __('Service URL', 'woocommerce-wayforpay-payments'),
                     'options' => $this->wayforpay_get_pages(__('Select Page', 'woocommerce-wayforpay-payments')),
                     'type' => 'select',
-                    'description' => __('URL with result of transaction page', 'woocommerce-wayforpay-payments'),
+                    'description' => __('URL with result of transaction page.', 'woocommerce-wayforpay-payments'),
                     'desc_tip' => true)
             );
         }
@@ -161,8 +159,8 @@ function woocommerce_wayforpay_init()
          **/
         public function admin_options()
         {
-            echo '<h3>' . __('WayForPay.com', 'woocommerce-wayforpay-payments') . '</h3>';
-            echo '<p>' . __('Payment gateway', 'woocommerce-wayforpay-payments') . '</p>';
+            echo '<h3>' . __('WayForPay.com', 'woocommerce-wayforpay-payments')   . '</h3>';
+            echo '<p>'  . __('Payment gateway', 'woocommerce-wayforpay-payments') . '</p>';
             echo '<table class="form-table">';
             // Generate the HTML For the settings form.
             $this->generate_settings_html();
@@ -233,10 +231,10 @@ function woocommerce_wayforpay_init()
             }
             $hash = implode(';', $hash);
             if ($hashOnly) {
-		return base64_encode($hash);
-	    } else {
+		        return base64_encode($hash);
+	        } else {
                 return hash_hmac('md5', $hash, $this->secretKey);
-	    }
+	        }
         }
 
         /**
@@ -250,10 +248,9 @@ function woocommerce_wayforpay_init()
             $data['merchantTransactionSecureType'] = 'AUTO';
 
             $data['merchantSignature'] = $this->getRequestSignature($data);
-	    $data['signString'] = $this->getSignature($data, $this->keysForSignature, true);
+	        $data['signString'] = $this->getSignature($data, $this->keysForSignature, true);
             return $this->generateForm($data);
         }
-
 
         /**
          * Generate form with fields
@@ -265,18 +262,15 @@ function woocommerce_wayforpay_init()
         {
             $form = '<form method="post" id="form_wayforpay" action="' . $this->url . '" accept-charset="utf-8">';
             foreach ($data as $k => $v) $form .= $this->printInput($k, $v);
-            $button = "<img style='position:absolute; top:50%; left:47%; margin-top:-125px; margin-left:-60px;' src='' >
-	<script>
-		function submitWayForPayForm()
-		{
-			document.getElementById('form_wayforpay').submit();
-		}
-		setTimeout( submitWayForPayForm, 200 );
-	</script>";
-
-            return $form .
-            "<input type='submit' style='display:none;' /></form>"
-            . $button;
+            $button = '<img style="position: absolute; top: 50%; left: 47%; margin-top: -125px; margin-left: -60px;" src="">'; ?>
+            <script>
+                function submitWayForPayForm() {
+                  document.getElementById('form_wayforpay').submit();
+                }
+                setTimeout(submitWayForPayForm, 200);
+            </script> <?php
+            
+            return $form . '<input type="submit" style="display: none;" /></form>' . $button;
         }
 
         /**
@@ -293,7 +287,6 @@ function woocommerce_wayforpay_init()
             foreach ($val as $v) $str .= $this->printInput($name . '[]', $v);
             return $str;
         }
-
 
         /**
          * @param $inputData
@@ -329,9 +322,7 @@ function woocommerce_wayforpay_init()
 
             }
             return null;
-
         }
-
 
         /**
          * @param $data
@@ -355,7 +346,6 @@ function woocommerce_wayforpay_init()
 
             return json_encode($responseToGateway);
         }
-
 
         /**
          * Generate wayforpay button link
@@ -383,22 +373,19 @@ function woocommerce_wayforpay_init()
             );
 
             $items = $order->get_items();
-	    if (
-		is_array($items) &&
-                !empty($items)
-	    ) {
+            if (is_array($items) && !empty($items)) {
                 foreach ($items as $item) {
-//		    $wayforpay_args['productName'][] = esc_html($item['name']);
-		    $wayforpay_args['productName'][] = $item['name'];
-		    $wayforpay_args['productCount'][] = $item['qty'];
-		    $wayforpay_args['productPrice'][] = $item['line_total'];
-		}
-	    } else {
-//		$wayforpay_args['productName'][] = esc_html($wayforpay_args['orderReference']);
-		$wayforpay_args['productName'][] = $wayforpay_args['orderReference'];
-		$wayforpay_args['productCount'][] = 1;
-		$wayforpay_args['productPrice'][] = $wayforpay_args['amount'];
-	    }
+//  		    $wayforpay_args['productName'][] = esc_html($item['name']);
+                $wayforpay_args['productName'][] = $item['name'];
+                $wayforpay_args['productCount'][] = $item['qty'];
+                $wayforpay_args['productPrice'][] = $item['line_total'];
+            }
+            } else {
+//	    	    $wayforpay_args['productName'][] = esc_html($wayforpay_args['orderReference']);
+                $wayforpay_args['productName'][] = $wayforpay_args['orderReference'];
+                $wayforpay_args['productCount'][] = 1;
+                $wayforpay_args['productPrice'][] = $wayforpay_args['amount'];
+            }
             $phone = $order->billing_phone;
             $phone = str_replace(array('+', ' ', '(', ')'), array('', '', '', ''), $phone);
             if (strlen($phone) == 10) {
@@ -446,15 +433,11 @@ function woocommerce_wayforpay_init()
          */
         private function getCallbackUrl($service = false)
         {
-
             $redirect_url = ($this->redirect_page_id == "" || $this->redirect_page_id == 0) ? get_site_url() . "/" : get_permalink($this->redirect_page_id);
             if (!$service) {
-		if (
-		    isset($this->settings['returnUrl_m']) &&
-		    trim($this->settings['returnUrl_m']) !== ''
-	   	) {
-		    return trim($this->settings['returnUrl_m']);
-		}
+		        if (isset($this->settings['returnUrl_m']) &&    trim($this->settings['returnUrl_m']) !== '') {
+		            return trim($this->settings['returnUrl_m']);
+		        }
                 return $redirect_url;
             }
 
@@ -465,7 +448,6 @@ function woocommerce_wayforpay_init()
         {
             return substr(get_bloginfo('language'), 0, 2);
         }
-
 
         protected function isPaymentValid($response)
         {
@@ -483,7 +465,6 @@ function woocommerce_wayforpay_init()
 
             $responseSignature = $response['merchantSignature'];
 
-
             if ($this->getResponseSignature($response) != $responseSignature) {
                 die( __('An error has occurred during payment. Signature is not valid.', 'woocommerce-wayforpay-payments'));
             }
@@ -498,7 +479,7 @@ function woocommerce_wayforpay_init()
                 $order->update_status('cancelled');
                 $order->add_order_note(__('Refund payment.', 'woocommerce-wayforpay-payments'));
                 return true;
-	    }
+	        }
 
             $woocommerce->cart->empty_cart();
 
