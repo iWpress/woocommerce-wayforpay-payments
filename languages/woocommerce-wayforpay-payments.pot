@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: woocommerce-gateway-wayforpay.php:72
+#: woocommerce-gateway-wayforpay.php:71
 msgid "Card payments, Apple Pay and Google Pay."
 msgstr ""
 
@@ -23,120 +23,117 @@ msgid "Enable/Disable"
 msgstr ""
 
 #: woocommerce-gateway-wayforpay.php:108
-msgid "Enable WayForPay Payment Module."
+msgid "Enable WayForPay Payment Module"
 msgstr ""
 
 #: woocommerce-gateway-wayforpay.php:110
-msgid "Show in the Payment List as a payment option"
+msgid "Show in the Payment List as a payment option."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:111
+#: woocommerce-gateway-wayforpay.php:112
 msgid "Title:"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:113
+#: woocommerce-gateway-wayforpay.php:114
 msgid "Internet acquiring"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:114
+#: woocommerce-gateway-wayforpay.php:115
 msgid "This controls the title which the user sees during checkout."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:116
+#: woocommerce-gateway-wayforpay.php:117
 msgid "Description:"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:118
+#: woocommerce-gateway-wayforpay.php:119
 msgid "Pay securely by Credit or Debit Card or Internet Banking through wayforpay.com service."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:119
+#: woocommerce-gateway-wayforpay.php:120
 msgid "This controls the description which the user sees during checkout."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:121
+#: woocommerce-gateway-wayforpay.php:122
 msgid "Merchant Login"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:123 
-#: woocommerce-gateway-wayforpay.php:129
-msgid "Given to Merchant by wayforpay.com"
+#: woocommerce-gateway-wayforpay.php:124 woocommerce-gateway-wayforpay.php:129
+msgid "Given to Merchant by wayforpay.com."
 msgstr ""
 
 #: woocommerce-gateway-wayforpay.php:127
 msgid "Merchant Secret key"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:133
+#: woocommerce-gateway-wayforpay.php:132
 msgid "Show Logo"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:135
+#: woocommerce-gateway-wayforpay.php:134
 msgid "Show the wayforpay.com logo in the Payment Method section for the user"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:137
-msgid "Tick to show wayforpay.com logo"
+#: woocommerce-gateway-wayforpay.php:136
+msgid "Tick to show wayforpay.com logo."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:139
+#: woocommerce-gateway-wayforpay.php:138
 msgid "Return URL"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:141
-#: woocommerce-gateway-wayforpay.php:151
+#: woocommerce-gateway-wayforpay.php:140 woocommerce-gateway-wayforpay.php:149
 msgid "Select Page"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:142 
-#: woocommerce-gateway-wayforpay.php:146
-msgid "URL of success page"
+#: woocommerce-gateway-wayforpay.php:141 woocommerce-gateway-wayforpay.php:145
+msgid "URL of success page."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:144
+#: woocommerce-gateway-wayforpay.php:143
 msgid "or specify"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:150
+#: woocommerce-gateway-wayforpay.php:148
 msgid "Service URL"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:153
-msgid "URL with result of transaction page"
+#: woocommerce-gateway-wayforpay.php:151
+msgid "URL with result of transaction page."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:164
+#: woocommerce-gateway-wayforpay.php:162
 msgid "WayForPay.com"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:166
+#: woocommerce-gateway-wayforpay.php:163
 msgid "Payment gateway"
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:189
+#: woocommerce-gateway-wayforpay.php:187
 msgid "Thank you for your order, you will now be redirected to the WayForPay payment page."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:477
+#: woocommerce-gateway-wayforpay.php:459
 msgid "An error has occurred during payment. Please contact us to ensure your order has submitted."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:481
+#: woocommerce-gateway-wayforpay.php:463
 msgid "An error has occurred during payment. Merchant data is incorrect."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:488
+#: woocommerce-gateway-wayforpay.php:469
 msgid "An error has occurred during payment. Signature is not valid."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:495
+#: woocommerce-gateway-wayforpay.php:476
 msgid "WayForPay payment successful.<br/>WayForPay ID: "
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:499
+#: woocommerce-gateway-wayforpay.php:480
 msgid "Refund payment."
 msgstr ""
 
-#: woocommerce-gateway-wayforpay.php:518
+#: woocommerce-gateway-wayforpay.php:499
 msgid "Thank you for shopping with us. Your account has been charged and your transaction is successful."
 msgstr ""
