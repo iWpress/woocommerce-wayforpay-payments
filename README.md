@@ -8,6 +8,7 @@
 >3. Перейти до розділу "WooCommerce" -> "Settings" -> "Checkout"
 >4. Внизу сторінки в пункті "WayForPay – Internet acquiring", натиснути кнопку "Settings" біля "Card payments, Apple Pay and Google Pay."
 >5. Ввести дані вашого мерчанта:
+
     - в полі “Merchant Login”      - вставте, будь ласка, MERCHANT LOGIN.
     - в полі “Merchant Secret key” – вставте, будь ласка, MERCHANT SECRET KEY.
 
